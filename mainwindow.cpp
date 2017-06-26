@@ -18,6 +18,8 @@ MainWindow::~MainWindow()
 }
 
 /*test:
+ * Each arg to ffmpeg will be a seperate string into the args list
+ *
  * To replace video's audio stream:
 ffmpeg -i OUTPUT.mp4 -i audio.wav -shortest -c:v
 copy -c:a aac -b:a 256k OUTPUT2.mp4
