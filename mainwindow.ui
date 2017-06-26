@@ -144,6 +144,19 @@
        </rect>
       </property>
      </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>120</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Output</string>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>
