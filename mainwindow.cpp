@@ -18,11 +18,12 @@ MainWindow::~MainWindow()
 }
 
 /*test:
- * Each arg to ffmpeg will be a seperate string into the args list
+ * Each arg to ffmpeg will be a seperate string into the args list, don't combine them
+ * into a single string
  *
  * To replace video's audio stream:
-ffmpeg -i OUTPUT.mp4 -i audio.wav -shortest -c:v
-copy -c:a aac -b:a 256k OUTPUT2.mp4
+ffmpeg -i INPUT.mp4 -i AUDIO.wav -map 0:0 -map 1:0
+-c:v copy -c:a aac -b:a 256k -shortest OUTPUT.mp4
 
 To strip video's audio:
 ffmpeg -i video.mp4 -codec copy -an OUTPUT.mp4
@@ -32,17 +33,21 @@ void MainWindow::executeCommand()
     QStringList args;
     qDebug() << "EXECUTE COMMAND PRESSED\n" << endl;
     args << "-i";
-    args <<ui->lineEdit_Video->text();
+    args << ui->lineEdit_Video->text();
     args << "-i";
-    args <<ui->lineEdit_Audio->text();
-    args << "-shortest";
-    args <<"-c:v";
-    args <<"copy";
+    args << ui->lineEdit_Audio->text();
+    args << "-map";
+    args << "0:0";
+    args << "-map";
+    args << "1:0";
+    args << "-c:v";
+    args << "copy";
     args << "-c:a";
     args << "aac";
     args << "-b:a";
-    args <<"256k";
-    args <<"OUTPUT2.mp4";
+    args << "256k";
+    args << "-shortest";
+    args << ui->lineEdit_Dest->text();
     commandProcess.start("C:\\ffmpeg\\bin\\ffmpeg.exe", args);
     qDebug() << args << endl;
 
@@ -67,7 +72,9 @@ void MainWindow::cancelCommand()
 
 void MainWindow::setDestination()
 {
-
+    QString file = QFileDialog::getSaveFileName(this, tr("Select Destination"),
+             "", tr("All Files (*)"));
+    ui->lineEdit_Dest->setText(file);
 }
 
 void MainWindow::setAudio()
