@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>391</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab_Main">
+     <attribute name="title">
+      <string>Main</string>
+     </attribute>
+     <widget class="QLineEdit" name="lineEdit_Video">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>20</y>
+        <width>301</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;Video whose audio stream will be replaced&gt;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_Audio">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>50</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Audio..</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_Dest">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>90</y>
+        <width>301</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;Destination - leave empty to overwrite Video File&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_Audio">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>50</y>
+        <width>301</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;Audio stream&gt;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_Process">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>200</y>
+        <width>80</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Process</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_Cancel">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>200</y>
+        <width>80</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Cancel</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_Video">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Video..</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_Dest">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>90</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Dest..</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_Output">
+     <attribute name="title">
+      <string>Output</string>
+     </attribute>
+     <widget class="QTextBrowser" name="textBrowser_Output">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>371</width>
+        <height>211</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton_Cancel</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>cancelCommand()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>249</x>
+     <y>255</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>238</x>
+     <y>321</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_Process</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>executeCommand()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>174</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>163</x>
+     <y>342</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_Video</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>setVideo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>43</x>
+     <y>74</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>39</x>
+     <y>333</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_Audio</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>setAudio()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>32</x>
+     <y>107</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>32</x>
+     <y>315</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_Dest</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>setDestination()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>54</x>
+     <y>142</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>59</x>
+     <y>353</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>executeCommand()</slot>
+  <slot>setVideo()</slot>
+  <slot>setAudio()</slot>
+  <slot>setDestination()</slot>
+  <slot>cancelCommand()</slot>
+ </slots>
+</ui>
