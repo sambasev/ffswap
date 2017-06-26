@@ -27,6 +27,12 @@ ffmpeg -i INPUT.mp4 -i AUDIO.wav -map 0:0 -map 1:0
 
 To strip video's audio:
 ffmpeg -i video.mp4 -codec copy -an OUTPUT.mp4
+
+TODO:
+1). Make it unpressable till ffmpeg is done
+2). Determine if audio needs to be transcoded
+3). Surround vs. stereo vs. mono?
+4). Output overwrite
 */
 void MainWindow::executeCommand()
 {
@@ -67,7 +73,7 @@ void MainWindow::outputCommand()
 
 void MainWindow::cancelCommand()
 {
-
+    close();
 }
 
 void MainWindow::setDestination()

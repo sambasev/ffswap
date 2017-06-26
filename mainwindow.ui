@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>424</width>
+    <height>358</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>391</width>
-      <height>261</height>
+      <width>421</width>
+      <height>331</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -85,8 +85,8 @@
      <widget class="QPushButton" name="pushButton_Process">
       <property name="geometry">
        <rect>
-        <x>130</x>
-        <y>200</y>
+        <x>120</x>
+        <y>270</y>
         <width>80</width>
         <height>22</height>
        </rect>
@@ -98,8 +98,8 @@
      <widget class="QPushButton" name="pushButton_Cancel">
       <property name="geometry">
        <rect>
-        <x>230</x>
-        <y>200</y>
+        <x>210</x>
+        <y>270</y>
         <width>80</width>
         <height>22</height>
        </rect>
@@ -134,18 +134,13 @@
        <string>Dest..</string>
       </property>
      </widget>
-    </widget>
-    <widget class="QWidget" name="tab_Output">
-     <attribute name="title">
-      <string>Output</string>
-     </attribute>
      <widget class="QTextBrowser" name="textBrowser_Output">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>371</width>
-        <height>211</height>
+        <x>20</x>
+        <y>140</y>
+        <width>351</width>
+        <height>121</height>
        </rect>
       </property>
      </widget>
@@ -182,22 +177,6 @@
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_Process</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>executeCommand()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>174</x>
-     <y>254</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>163</x>
-     <y>342</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>pushButton_Video</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
@@ -210,6 +189,22 @@
     <hint type="destinationlabel">
      <x>39</x>
      <y>333</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_Process</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>executeCommand()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>174</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>163</x>
+     <y>342</y>
     </hint>
    </hints>
   </connection>
