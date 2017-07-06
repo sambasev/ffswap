@@ -157,6 +157,19 @@
        <string>Output</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="pushButton_ffprobe">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>270</y>
+        <width>80</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ffprobe</string>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>
@@ -180,8 +193,8 @@
    <slot>cancelCommand()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>249</x>
-     <y>255</y>
+     <x>251</x>
+     <y>312</y>
     </hint>
     <hint type="destinationlabel">
      <x>238</x>
@@ -212,8 +225,8 @@
    <slot>executeCommand()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>174</x>
-     <y>254</y>
+     <x>176</x>
+     <y>312</y>
     </hint>
     <hint type="destinationlabel">
      <x>163</x>
@@ -253,6 +266,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton_ffprobe</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>ffprobeCommand()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>354</x>
+     <y>328</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>343</x>
+     <y>400</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>executeCommand()</slot>
@@ -260,5 +289,6 @@
   <slot>setAudio()</slot>
   <slot>setDestination()</slot>
   <slot>cancelCommand()</slot>
+  <slot>ffprobeCommand()</slot>
  </slots>
 </ui>

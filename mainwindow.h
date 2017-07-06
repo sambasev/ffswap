@@ -29,6 +29,7 @@ private slots:
     void setDestination();
     void setAudio();
     void setVideo();
+    void ffprobeCommand();
 
 private:
     Ui::MainWindow *ui;

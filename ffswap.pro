@@ -6,11 +6,16 @@
 
 QT       += core gui
 QT       += gui
-
+UI_DIR = $$PWD
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = ffswap
 TEMPLATE = app
+CONFIG += console
+
+INCLUDEPATH += C:\ffmpeg\ffmpeg-dev\include
+LIBS += -LC:\ffmpeg\ffmpeg-dev\lib
+LIBS += -lavcodec -lavformat -lavutil
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked as deprecated (the exact warnings
